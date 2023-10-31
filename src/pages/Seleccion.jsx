@@ -20,9 +20,9 @@ const Seleccion = () => {
                 dispatch2({ type: tipo.anular, payload: { nombre: x.nombre } })
                             }              }
             >
-              <span className="absolute inset-0 translate-x-0.5 translate-y-3 bg-orange-600 transition-transform group-hover:translate-y-2 group-hover:translate-x-0 h-[45px]"></span>
+              <span className="absolute inset-0 translate-x-0.5 translate-y-3 bg-orange-600 transition-transform group-hover:translate-y-2 group-hover:translate-x-0 h-[45px]  "></span>
 
-              <span className="relative block border border-current bg-white px-8 py-3">
+              <span className="relative block border border-current bg-white px-8 py-3 ">
                 Anular
               </span>
             </button>

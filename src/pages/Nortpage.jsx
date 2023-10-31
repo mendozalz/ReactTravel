@@ -8,18 +8,18 @@ const Nortpage = () => {
   const { contratar } = useContext(Contexto);
   return (
     <>
-      <div className="grid grid-cols-0 md:grid-cols-2 xl:grid-cols-4 bg-gray-50 h-auto w-auto p-[20px] 2xl:p-[40px] gap-2 md:p-[20px] md:gap-4 xl:gap-8">
+      <div className="grid flex-grow grid-cols-0 md:grid-cols-2 xl:grid-cols-4 altura-calculada w-auto p-[20px] 2xl:p-[40px] gap-2 md:p-[20px] md:gap-4 xl:gap-8">
         {filtrado.map((data, index) => {
           const encontrado = contratar.find((x) => x.nombre === data.nombre);
           return (
             <div
               key={index}
-              className="da relative flex flex-col justify-center items-center overflow-hidden bg-gray-50"
+              className="da relative flex flex-col justify-center items-center overflow-hidden bg-gray-50 rounded-xl border-0"
             >
               <div className="absolute inset-0 bg-center dark:bg-black"></div>
 
               <a href={`/comprar/${data.nombre}`}>
-                <div className="group relative flex h-72 2xl:h-80 max-w-100 lg:w-100 rounded-xl shadow-xl ring-gray-900/5">
+                <div className="group relative flex h-72 2xl:h-80 max-w-100 lg:w-100 rounded-xl shadow-xl ring-gray-900/5 ">
                   <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                     <img
                       src={`/img/${data.imagen}`}
@@ -37,7 +37,7 @@ const Nortpage = () => {
                   {/* Fin precio */}
                   {/* Badge */}
                   {encontrado && (
-                    <span className="badge absolute xl:top-2 right-2 top-6 md:top-6 sm:top-9 xl:top-6 z-20 inline-flex items-center rounded-full bg-emerald-100 px-2.5 py-0.5 text-emerald-700">
+                    <span className="badge absolute xl:top-2 right-2 top-6 md:top-6 sm:top-9 xl:top-6 z-20 inline-flex items-center rounded-full bg-orange-100 px-2.5 py-0.5 text-orange-700">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
