@@ -4,9 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 body{
-  margin: 0;
-  padding: 0;
-  height: 0;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -21,7 +18,10 @@ body{
   color: orange;
 }
 
-.altura-calculada {
-  height: calc(100vh - 148px);
-  background-image: url(/bg-transparente.png);
+@media only screen and (min-width:768px){
+  .altura-calculada {
+    height: calc(100vh - 148px);
+    background-image: url(/bg-transparente.png);
+  }
+
 }
