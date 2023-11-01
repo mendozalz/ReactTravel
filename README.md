@@ -9,7 +9,7 @@ Advertencia: Hay parte de la web que no son accesibles, ejemplo como las paginas
   <img src="public\readme\portada.gif" alt="Proyecto Travel" />
 </p>
 
-Ver en [Vercel](https://usecontext-translator.netlify.app/)
+Ver en [Vercel](https://react-travel-brown.vercel.app/)
 
 <p align="center">
   <img src="public\readme\recorrido.gif" alt="Proyecto Travel" />
