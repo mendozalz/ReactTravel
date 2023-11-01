@@ -63,51 +63,56 @@ const Comprar = () => {
     return <Navigate to="/norte" />;
   }
   return (
-    <>
-      <h1>{nombre}</h1>
-      <img src={`/img/${coincidencia.imagen}`} alt={nombre} />
-      <button
-        className="inline-block rounded-full border border-orange-600 bg-orange-600 p-3 text-white hover:bg-transparent hover:text-orange-600 focus:outline-none focus:ring active:text-orange-500 rotate-180"
-        onClick={volver}
-      >
-        <span className="sr-only"> Download </span>
-
-        <svg
-          className="h-5 w-5 ltr:rotate-90"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <div className="contenedor w-[80%] m-auto relative">
+        <button
+          className="inline-block rounded-full border border-orange-600 bg-orange-600 p-3 text-white hover:bg-transparent hover:text-orange-600 focus:outline-none focus:ring active:text-orange-500 rotate-180 absolute left-4 top-4"
+          onClick={volver}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M14 5l7 7m0 0l-7 7m7-7H3"
-          />
-        </svg>
-      </button>
-      {(!encontrado)&&<button
-        className="group relative inline-block text-sm font-medium text-orange-600 focus:outline-none focus:ring active:text-orange-500"
-        onClick={comprar}
-      >
-        <span className="absolute inset-0 translate-x-0.5 translate-y-1 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 h-[45px]"></span>
-
-        <span className="relative block border border-current bg-white px-8 py-3">
-          Contratar
-        </span>
-      </button>}
-      {(encontrado) && <button
-        className="group relative inline-block text-sm font-medium text-orange-600 focus:outline-none focus:ring active:text-orange-500"
-        onClick={anular}
-      >
-        <span className="absolute inset-0 translate-x-0.5 translate-y-1 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 h-[45px]"></span>
-
-        <span className="relative block border border-current bg-white px-8 py-3">
-          Anular
-        </span>
-      </button>}
-    </>
+          <span className="sr-only"> Volver </span>
+          <svg
+            className="h-5 w-5 ltr:rotate-90"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            />
+          </svg>
+        </button>
+    <div className="lg:flex mt-10">
+      <img className="rounded-[7%]" src={`/img/${coincidencia.imagen}`} alt={nombre} />
+      <div className="lg:px-6 flex flex-col justify-between mt-6 lg:mr-50">
+        <div>
+          <h1 className="text-5xl font-medium text-left leading-10">{nombre}</h1>
+          <h2 className="text-2xl font-medium text-left leading-6 mt-4 mb-4">{coincidencia.situacion}</h2>
+          <p className="text-left mb-6">{coincidencia.servicio}</p>
+        </div>
+        {(!encontrado)&&<button
+          className="group relative inline-block text-sm font-medium text-orange-600 focus:outline-none focus:ring active:text-orange-500 w-60"
+          onClick={comprar}
+        >
+          <span className="absolute inset-0 translate-x-0.5 translate-y-1 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 h-[45px]"></span>
+          <span className="relative block border border-current bg-white px-8 py-3">
+            Contratar
+          </span>
+        </button>}
+        {(encontrado) && <button
+          className="group relative inline-block text-sm font-medium text-orange-600 focus:outline-none focus:ring active:text-orange-500 w-60"
+          onClick={anular}
+        >
+          <span className="absolute inset-0 translate-x-0.5 translate-y-1 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 h-[45px]"></span>
+          <span className="relative block border border-current bg-white px-8 py-3">
+            Anular
+          </span>
+        </button>}
+      </div>
+    </div>
+    </div>
   );
 };
 
