@@ -3,23 +3,18 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { MagicTabSelect } from "react-magic-motion";
 import Contexto from "../context/Contexto";
 import { useState } from "react";
+import NavigateMovil from "./NavigateMovil";
+import BtnLogout from "../components/BtnLogout";
 
 const underlineTabs = ["Zona Norte", "Zona Sur", "Mi selección"];
 
 const NavigatorAnimated = () => {
   const navigate = useNavigate();
-  const { desloguear } = useContext(Contexto);
-
-  const login = () => {
-    desloguear();
-    navigate("/", { replace: true });
-  };
 
   const [selectedIndex, setSelectedIndex] = useState(1);
 
   const tabsComponents = underlineTabs.map((text, i) => {
     const toValue = i === 0 ? "norte" : i === 1 ? "sur" : "seleccion";
-
     return (
       <NavLink
         to={toValue}
@@ -36,7 +31,10 @@ const NavigatorAnimated = () => {
 
         {selectedIndex === i && (
           <div style={{ position: "relative", transform: "translateY(3px)" }}>
-            <MagicTabSelect id="underline" transition={{ type: "spring", bounce: 0.3 }}>
+            <MagicTabSelect
+              id="underline"
+              transition={{ type: "spring", bounce: 0.3 }}
+            >
               <div
                 style={{
                   width: "100%",
@@ -54,17 +52,19 @@ const NavigatorAnimated = () => {
 
   return (
     <>
-      <div className="flex justify-between py-4 px-10">
-        <nav style={{ display: "flex", gap: "0.5rem" }}>{tabsComponents}</nav>
-        <button
-          className="group relative inline-block text-sm font-medium text-orange-600 focus:outline-none focus:ring active:text-orange-500"
-          onClick={login}
-        >
-          <span className="absolute inset-0 translate-x-0.5 translate-y-3 bg-orange-600 transition-transform group-hover:translate-y-2 group-hover:translate-x-0 h-[40px] "></span>
-          <span className="relative block border border-current bg-white px-8 py-3">Logout</span>
-        </button>
+      {/* Menú movil */}
+      <NavigateMovil/>
+      {/* Fin menú movil */}
+      {/* Menu PC */}
+      <div className="hidden sm:flex justify-between py-4 px-10">
+        <div className="flex items-center">
+          <img className="h-12 mr-4" src="/logo.jpeg" alt="logo" />
+          <nav style={{ display: "flex", gap: "0.5rem" }}>{tabsComponents}</nav>
+        </div>
+        <BtnLogout/>
       </div>
-       <hr className="mx-auto w-[80%]  border-1 border-orange-500 " />
+      {/* Fin menú pc */}
+      <hr className="mx-auto w-[80%]  border-1 border-orange-500 " />
     </>
   );
 };

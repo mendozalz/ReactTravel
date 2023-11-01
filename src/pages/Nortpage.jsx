@@ -8,7 +8,7 @@ const Nortpage = () => {
   const { contratar } = useContext(Contexto);
   return (
     <>
-      <div className="grid flex-grow grid-cols-0 md:grid-cols-2 xl:grid-cols-4 altura-calculada w-auto p-[20px] 2xl:p-[40px] gap-2 md:p-[20px] md:gap-4 xl:gap-8">
+      <div className="grid flex-grow grid-cols-0 md:grid-cols-2 xl:grid-cols-4 altura-calculada w-auto px-[20px] pt-[40px] 2xl:p-[40px] gap-2 md:gap-4 xl:gap-8">
         {filtrado.map((data, index) => {
           const encontrado = contratar.find((x) => x.nombre === data.nombre);
           return (

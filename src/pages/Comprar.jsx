@@ -63,7 +63,7 @@ const Comprar = () => {
     return <Navigate to="/norte" />;
   }
   return (
-    <div className="contenedor w-[80%] m-auto relative">
+    <div className="contenedor w-[80%] m-auto relative mb-8">
         <button
           className="inline-block rounded-full border border-orange-600 bg-orange-600 p-3 text-white hover:bg-transparent hover:text-orange-600 focus:outline-none focus:ring active:text-orange-500 rotate-180 absolute left-4 top-4"
           onClick={volver}
