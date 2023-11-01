@@ -3,6 +3,8 @@
 Proyecto Reac travel como parte del aprendizaje en el uso de: 
 React-router-dom, el Contexto, Rutas privada y Rutas publicas.
 
+Advertencia: Hay parte de la web que no son accesibles, ejemplo como las paginas dinamicas de cada servicio.
+
 <p align="center">
   <img src="public\readme\portada.gif" alt="Proyecto Travel" />
 </p>
