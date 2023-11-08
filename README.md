@@ -1,6 +1,6 @@
 # React Travel
 
-Proyecto Reac travel como parte del aprendizaje en el uso de: 
+Proyecto React travel como parte del aprendizaje en el uso de: 
 React-router-dom, el Contexto, Rutas privada y Rutas publicas.
 
 Advertencia: Esta es una aplicación desde el front-end y veras en las rutas dinamicas un error 404, para ver su funcionalidad debes instalar la app en local ó hasta que implemente SSR.
